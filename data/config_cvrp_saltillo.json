@@ -1,0 +1,52 @@
+{
+  "nombre": "CVRP_OXXO_SALTILLO",
+  "descripcion": "Dataset sintético basado en operaciones reales de OXXO en Saltillo",
+  "parametros_generales": {
+    "capacidad_camion": 3000,
+    "num_camiones": 3,
+    "costo_por_km": 15.5,
+    "velocidad_promedio": 40,
+    "jornada_laboral_min": 480,
+    "costo_hora_conductor": 120.0
+  },
+  "estadisticas_dataset": {
+    "num_tiendas": 20,
+    "demanda_total_normal": 3667,
+    "demanda_total_pico": 5445,
+    "distancia_promedio_cedis": 5.02,
+    "tiempo_servicio_promedio": 43.55
+  },
+  "escenarios": [
+    {
+      "id": "MIERCOLES_NORMAL",
+      "descripcion": "Miércoles típico de operación",
+      "demanda_multiplier": 1.0,
+      "trafico_multiplier": 1.0
+    },
+    {
+      "id": "SABADO_NORMAL",
+      "descripcion": "Sábado normal",
+      "demanda_multiplier": 1.1,
+      "trafico_multiplier": 1.2
+    },
+    {
+      "id": "MIERCOLES_PICO",
+      "descripcion": "Miércoles de quincena",
+      "demanda_multiplier": 1.5,
+      "trafico_multiplier": 1.3
+    },
+    {
+      "id": "SABADO_PICO",
+      "descripcion": "Sábado de temporada alta (navidad)",
+      "demanda_multiplier": 1.6,
+      "trafico_multiplier": 1.5
+    }
+  ],
+  "notas_metodologicas": [
+    "Dataset generado el: 2026-02-01",
+    "Basado en parámetros operativos reales proporcionados por personal de tienda (enero 2026)",
+    "Ubicaciones sintetizadas en zona metropolitana de Saltillo",
+    "Distancias calculadas mediante fórmula de Haversine (km)",
+    "Para matriz de tiempos reales, usar OSRM con estas coordenadas"
+  ]
+}

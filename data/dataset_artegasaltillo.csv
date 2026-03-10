@@ -1,0 +1,10 @@
+id,name,lat,lon,demand,tw_start,tw_end,service_time,node_type
+0,CEDIS Saltillo,25.4673,-100.9575,0,360,1320,0,depot
+1,OXXO Libramiento,25.4521,-100.8912,280,420,660,20,store
+2,OXXO Constitución,25.4465,-100.8524,190,480,720,25,store
+3,OXXO Arteaga Centro,25.4442,-100.8481,210,420,660,30,store
+4,OXXO Gas Arteaga,25.4398,-100.8415,350,360,1080,15,store
+5,OXXO Bella Unión,25.4215,-100.8242,170,540,780,20,store
+6,OXXO Carbonera,25.4182,-100.7854,420,360,1200,15,store
+7,OXXO Los Llanos,25.4518,-100.8712,230,840,1080,20,store
+8,OXXO Nicho UAdeC,25.4385,-100.8655,110,420,960,25,store 

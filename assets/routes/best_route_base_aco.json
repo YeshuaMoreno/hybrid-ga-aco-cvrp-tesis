@@ -1,0 +1,113 @@
+{
+  "scenario": "Base",
+  "solver": "aco",
+  "traffic_factor": 1.0,
+  "service_extra": 0,
+  "seed": 42,
+  "runtime_seconds": 0.1691,
+  "metrics": {
+    "objective": 73.83,
+    "total_km": 73.83,
+    "late_minutes": 0.0,
+    "wait_minutes": 264.1,
+    "route_time_minutes": 538.92,
+    "vehicles_used": 1,
+    "capacity_violation_kg": 0.0
+  },
+  "routes": [
+    {
+      "vehicle": 1,
+      "stops": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        8,
+        7,
+        4,
+        6,
+        0
+      ],
+      "stop_names": [
+        "CEDIS Saltillo",
+        "OXXO Libramiento",
+        "OXXO Constitución",
+        "OXXO Arteaga Centro",
+        "OXXO Bella Unión",
+        "OXXO Nicho UAdeC",
+        "OXXO Los Llanos",
+        "OXXO Gas Arteaga",
+        "OXXO Carbonera",
+        "CEDIS Saltillo"
+      ],
+      "load_bultos": 1960,
+      "load_kg": 13720.0
+    }
+  ],
+  "node_coords": [
+    {
+      "id": 0,
+      "name": "CEDIS Saltillo",
+      "lat": 25.4673,
+      "lon": -100.9575,
+      "node_type": "depot"
+    },
+    {
+      "id": 1,
+      "name": "OXXO Libramiento",
+      "lat": 25.4521,
+      "lon": -100.8912,
+      "node_type": "store"
+    },
+    {
+      "id": 2,
+      "name": "OXXO Constitución",
+      "lat": 25.4465,
+      "lon": -100.8524,
+      "node_type": "store"
+    },
+    {
+      "id": 3,
+      "name": "OXXO Arteaga Centro",
+      "lat": 25.4442,
+      "lon": -100.8481,
+      "node_type": "store"
+    },
+    {
+      "id": 4,
+      "name": "OXXO Gas Arteaga",
+      "lat": 25.4398,
+      "lon": -100.8415,
+      "node_type": "store"
+    },
+    {
+      "id": 5,
+      "name": "OXXO Bella Unión",
+      "lat": 25.4215,
+      "lon": -100.8242,
+      "node_type": "store"
+    },
+    {
+      "id": 6,
+      "name": "OXXO Carbonera",
+      "lat": 25.4182,
+      "lon": -100.7854,
+      "node_type": "store"
+    },
+    {
+      "id": 7,
+      "name": "OXXO Los Llanos",
+      "lat": 25.4518,
+      "lon": -100.8712,
+      "node_type": "store"
+    },
+    {
+      "id": 8,
+      "name": "OXXO Nicho UAdeC",
+      "lat": 25.4385,
+      "lon": -100.8655,
+      "node_type": "store "
+    }
+  ]
+}

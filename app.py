@@ -270,7 +270,13 @@ def cmd_benchmark(args) -> int:
     bench = {
         "solver": args.solver,
         "runs": args.runs,
+        "scenario_name": getattr(args, "scenario_name", "") or "",
+        "traffic_factor": args.traffic_factor,
+        "service_extra": args.service_extra,
+        "service_factor": args.service_factor,
+        "seed_base": args.seed if args.seed is not None else 0,
         "data": args.data,
+        "matrix_json": args.matrix_json or "",
         "capacity_kg": problem.capacity_kg,
         "max_vehicles": problem.max_vehicles,
         "speed_kmh": problem.speed_kmh,
@@ -323,6 +329,7 @@ def build_parser() -> argparse.ArgumentParser:
         sp.add_argument("--seed", type=int, default=42)
         sp.add_argument("--out-dir", default="results")
         sp.add_argument("--tag", default="")
+        sp.add_argument("--scenario-name", default="", help="Nombre del escenario: 'Base', 'Hora Pico', 'Tienda Congestionada', 'Estres', 'Estres Total'")
         sp.add_argument("--traffic-factor", type=float, default=1.0, help="Multiplicador de tiempo vial para simular tráfico: 1.4")
         sp.add_argument("--service-factor", type=float, default=1.0, help="Multiplicador del tiempo de servicio en tiendas: 1.5")
         sp.add_argument("--service-extra", type=int, default=0, help="Minutos extra fijos de servicio por tienda: 15")

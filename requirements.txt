@@ -1,0 +1,27 @@
+# ── Dependencias del proyecto TESIS GA-ACO CVRP ──────────────────────────────
+#
+# Dashboard web local:
+#   streamlit run dashboard.py --server.address=localhost
+#
+# Instalar todo:
+#   pip install -r requirements.txt
+#
+# Python recomendado: 3.11 – 3.14
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Dashboard web local
+streamlit>=1.32.0
+
+# Análisis de datos
+pandas>=2.0.0
+numpy>=1.26.0
+
+# Gráficas interactivas (dashboard)
+plotly>=5.18.0
+
+# Gráficas estáticas exportables (generate_figures.py)
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Monitoreo de recursos del sistema (monitor_resources.py)
+psutil>=5.9.0

@@ -1,4 +1,4 @@
-"""
+﻿"""
 consolidate_results.py
 Consolida todos los archivos JSON de benchmark en assets/master_benchmarks.csv.
 
@@ -244,17 +244,17 @@ def consolidate() -> list[dict]:
 
 
 def _coverage_report(rows: list[dict]) -> None:
-    """Imprime qué combinaciones escenario × algoritmo están presentes."""
+    """Imprime qué combinaciones escenario x algoritmo están presentes."""
     EXPECTED_SCENARIOS = [
         "Base", "Hora Pico", "Tienda Congestionada", "Estrés", "Estrés Total",
     ]
     EXPECTED_SOLVERS = ["ga", "aco", "hybrid"]
 
-    print("\n══════════════════════════════════════════════════════")
+    print("\n======================================================")
     print(" COBERTURA DE BENCHMARKS")
-    print("══════════════════════════════════════════════════════")
+    print("======================================================")
     print(f" {'Escenario':<28} {'GA':^12} {'ACO':^12} {'Hybrid':^12}")
-    print(" " + "─" * 66)
+    print(" " + "-" * 66)
 
     for sc in EXPECTED_SCENARIOS:
         row_data = {sv: [] for sv in EXPECTED_SOLVERS}
@@ -262,18 +262,22 @@ def _coverage_report(rows: list[dict]) -> None:
             if r["scenario"] == sc:
                 row_data[r["solver"]].append(r["label_source"])
 
-        def _cell(sv):
+        def _cell(sv: str) -> str:
             if not row_data[sv]:
                 return "FALTA"
             sources = set(row_data[sv])
-            tag = "ok" if sources == {"explicit"} else ("folder" if "inferred" not in sources else "infer")
-            return tag
+            # Muestra la MEJOR fuente disponible
+            if "explicit" in sources:
+                return "ok"
+            if "folder" in sources:
+                return "folder"
+            return "infer"
 
         print(f" {sc:<28} {_cell('ga'):^12} {_cell('aco'):^12} {_cell('hybrid'):^12}")
 
-    print(" " + "─" * 66)
-    print(" Leyenda: ok=explícito · folder=por carpeta · infer=inferido · FALTA=sin datos")
-    print("══════════════════════════════════════════════════════\n")
+    print(" " + "-" * 66)
+    print(" Leyenda: ok=explícito * folder=por carpeta * infer=inferido * FALTA=sin datos")
+    print("======================================================\n")
 
     # Combinaciones faltantes
     missing = []
@@ -286,7 +290,7 @@ def _coverage_report(rows: list[dict]) -> None:
     if missing:
         print(" COMBINACIONES FALTANTES (sin ningún benchmark):")
         for sc, sv in missing:
-            print(f"   · {sc} × {sv.upper()}")
+            print(f"   * {sc} x {sv.upper()}")
     else:
         print(" Cobertura completa: todas las combinaciones tienen al menos un benchmark.")
     print()
@@ -302,7 +306,7 @@ def _coverage_report(rows: list[dict]) -> None:
     if inferred_only:
         print(" COMBINACIONES SOLO INFERIDAS (sin metadata explícita):")
         for sc, sv in inferred_only:
-            print(f"   · {sc} × {sv.upper()}")
+            print(f"   * {sc} x {sv.upper()}")
         print()
 
 

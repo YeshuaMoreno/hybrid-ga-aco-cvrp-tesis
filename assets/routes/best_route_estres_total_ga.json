@@ -4,7 +4,7 @@
   "traffic_factor": 10.0,
   "service_extra": 0,
   "seed": 42,
-  "runtime_seconds": 0.2374,
+  "runtime_seconds": 0.2327,
   "metrics": {
     "objective": 71559.29,
     "total_km": 74.29,
